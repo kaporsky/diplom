@@ -1,0 +1,11 @@
+<?php 
+	include("bd.php");
+	session_start();
+	setcookie(shifr("id_u"));
+	setcookie(shifr("login"));
+	unset($_SESSION["id_u"]);
+	unset($_SESSION["id_r"]);
+	unset($_SESSION["login"]);
+	unset($_SESSION["tz"]);
+	session_destroy();
+?>

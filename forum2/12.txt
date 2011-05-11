@@ -1,0 +1,21 @@
+?php 
+$text_msg = $_POST["txt_msg"];
+$id_theme = $_POST["id_theme"];
+session_start();
+$id_u = $_SESSION["id_u"];
+
+include("../bd.php");
+?>
+<div class="right">
+<?php echo $text_msg; 
+echo "<br />", $id_theme;
+echo "<br />", $id_u;
+
+$b = mysql_query("INSERT INTO msg_themes(id_theme, id_u, text_msg) VALUES ('$id_theme', '$id_u', '$text_msg')", $db);
+if ($b) {
+	echo "Ваше сообщение успешно добавлено.";
+} else {
+	echo "Ошибка отправки сообщения!";
+}
+?>
+</div>
