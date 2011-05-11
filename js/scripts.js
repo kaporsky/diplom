@@ -14,7 +14,30 @@ $("#user_menu li a").click(function(stopLink){
 	});
 }
 
+function load_page() {
+	var pg = window.location.hash;
+	var pg = pg.replace('#','');
+	if(pg=='') {
+		$('#right_div').load('start.php');	
+	} else {
+		$.get(pg, function(p){
+			$('#right_div').html('').prepend(p);									
+		})
+	}
+}
 
+
+function links_for_get() {
+	$('a').click(function(stopLink){
+		stopLink.preventDefault();
+		var hr = $(this).attr('href');
+		window.location.hash = hr;
+		$.get(hr, function(p){
+			$('#right_div').html('').prepend(p);									
+		});
+		
+	});
+}
 
 //----------------------------------------function var button for enter menu---------------------------------
 

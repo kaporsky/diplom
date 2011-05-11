@@ -14,11 +14,11 @@
 
 <body>
 <div id="main_div">
-
 <script type="text/javascript"> 
 	click_logo(); 
 </script>
 
+<?php //echo $lk; ?>
 
 <div id="header">	
 	<img src="images/logo.jpg"></div>
@@ -47,9 +47,12 @@
 
 <div id="right_div">
 	<script type="text/javascript"> 
-		$('#right_div').load('start.php');
+	
+			load_page();
     </script>   	
 </div>
+
+
 </div>
 </body>
 </html>
